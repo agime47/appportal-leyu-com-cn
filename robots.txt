@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://agime47.github.io/appportal-leyu-com-cn/sitemap.xml

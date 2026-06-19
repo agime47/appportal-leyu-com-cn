@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+    <title>乐鱼体育 · 再访与收藏</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f5f0eb;
+            font-family: "Noto Serif SC", "Source Han Serif SC", "Times New Roman", Georgia, serif;
+            color: #2c2b28;
+            line-height: 1.75;
+            padding: 2rem 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Hero 区域 — 温和的视觉引导 */
+        .hero {
+            margin-top: 1rem;
+            margin-bottom: 3.5rem;
+            text-align: center;
+            padding-bottom: 2.2rem;
+            border-bottom: 1px solid #ddd6ce;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 400;
+            letter-spacing: 0.04em;
+            color: #3d352e;
+            margin-bottom: 0.8rem;
+        }
+
+        .hero .subhead {
+            font-size: 1.05rem;
+            color: #6e6259;
+            max-width: 580px;
+            margin: 0 auto;
+            font-style: italic;
+            line-height: 1.7;
+        }
+
+        .hero .subhead a {
+            color: #8b3f1f;
+            text-decoration: none;
+            border-bottom: 1px dotted #b07e63;
+        }
+
+        .hero .subhead a:hover {
+            border-bottom-style: solid;
+            color: #632c14;
+        }
+
+        /* 卡片式信息块 — 融合引用和提示感 */
+        .card {
+            background-color: #faf8f5;
+            border-left: 4px solid #c8b6a6;
+            padding: 1.6rem 2rem 1.6rem 1.8rem;
+            margin-bottom: 2.6rem;
+            border-radius: 0 6px 6px 0;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+        }
+
+        .card p {
+            margin-top: 0.45rem;
+        }
+
+        .card strong {
+            font-weight: 600;
+            color: #4d3c2e;
+        }
+
+        .card .quote-marker {
+            display: block;
+            font-size: 0.9rem;
+            color: #8d7b6b;
+            margin-bottom: 0.3rem;
+            letter-spacing: 0.03em;
+        }
+
+        /* 优势／说明区块 — 灵活双列 */
+        .advantage-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 2.8rem 0 2.2rem;
+        }
+
+        .advantage-item {
+            flex: 1 1 200px;
+            background: #fcf9f6;
+            padding: 1.3rem 1.2rem 1.1rem;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+            border: 1px solid #e8dfd7;
+        }
+
+        .advantage-item .icon-symbol {
+            font-size: 1.6rem;
+            display: inline-block;
+            margin-bottom: 0.4rem;
+            color: #7f685b;
+        }
+
+        .advantage-item h3 {
+            font-weight: 500;
+            font-size: 1.05rem;
+            margin-bottom: 0.45rem;
+            color: #3f332b;
+        }
+
+        .advantage-item p {
+            font-size: 0.95rem;
+            color: #574b42;
+        }
+
+        /* 说明区 — 类似短文段落 */
+        .essay-section {
+            margin: 2.6rem 0 2.2rem;
+        }
+
+        .essay-section h2 {
+            font-weight: 400;
+            font-size: 1.4rem;
+            color: #3d342d;
+            margin-bottom: 0.8rem;
+            letter-spacing: 0.01em;
+        }
+
+        .essay-section p {
+            margin-bottom: 1.1rem;
+        }
+
+        .essay-section .inset-block {
+            background: #ede5dd;
+            padding: 0.8rem 1.2rem;
+            border-radius: 5px;
+            color: #3e352e;
+            margin: 1.3rem 0 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        /* FAQ 摘要 — 紧凑而温和 */
+        .faq-summary {
+            margin: 2.8rem 0 1.8rem;
+            border-top: 1px solid #ddd6ce;
+            padding-top: 2rem;
+        }
+
+        .faq-summary h2 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: #3f352e;
+            margin-bottom: 1.2rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1.15rem;
+        }
+
+        .faq-item .question {
+            font-weight: 500;
+            color: #4f4036;
+            display: inline-block;
+            margin-bottom: 0.2rem;
+            letter-spacing: 0.01em;
+        }
+
+        .faq-item .question::before {
+            content: "Q·";
+            color: #9b7b66;
+            font-weight: 400;
+            margin-right: 2px;
+        }
+
+        .faq-item .answer {
+            margin-left: 1.2rem;
+            color: #5b4e44;
+            font-size: 0.95rem;
+            border-left: 2px solid #dbcbc0;
+            padding-left: 0.9rem;
+        }
+
+        .faq-item .answer a {
+            color: #7a4f38;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 0.5px;
+        }
+
+        .faq-item .answer a:hover {
+            color: #522f1e;
+        }
+
+        /* 底部链接区 — 保持干净 */
+        .footer-links {
+            margin-top: 3.5rem;
+            padding: 1.8rem 0 0.5rem;
+            border-top: 1px solid #ddd6ce;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem 1.8rem;
+            font-size: 0.9rem;
+            color: #6d6057;
+        }
+
+        .footer-links a {
+            color: #6d5648;
+            text-decoration: none;
+            border-bottom: 1px dotted #b99e8b;
+        }
+
+        .footer-links a:hover {
+            border-bottom-style: solid;
+            color: #3f2d22;
+        }
+
+        .footer-links span {
+            color: #8d7b6b;
+        }
+
+        /* 响应式微调 */
+        @media (max-width: 480px) {
+            body {
+                padding: 1.2rem 0.9rem;
+            }
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+            .card {
+                padding: 1.2rem 1.2rem 1.2rem 1rem;
+            }
+            .advantage-item {
+                flex: 1 1 100%;
+            }
+            .faq-item .answer {
+                margin-left: 0.6rem;
+                padding-left: 0.6rem;
+            }
+        }
+
+        /* 极简辅助 */
+        .faint-note {
+            color: #9b8d82;
+            font-size: 0.8rem;
+            margin-top: 1.2rem;
+        }
+
+        .inline-link-natural {
+            color: #7c4b2e;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 0.5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero 区：再次访问与收藏 -->
+    <div class="hero">
+        <h1>再次回到这里</h1>
+        <div class="subhead">
+            有些页面值得放进书签，偶尔想起时便回来看一看。<br>
+            <a href="https://appportal-leyu.com.cn">乐鱼体育</a> 便是这样一个地方——不喧哗，但始终在那里。
+        </div>
+    </div>
+
+    <!-- 卡片式引用 / 提示块 — 讲述收藏与再访的意义 -->
+    <div class="card">
+        <span class="quote-marker">✶ 关于收藏</span>
+        <p>浏览器的书签栏里，总有那么几个名字不会被归类到文件夹深处。<strong>把「乐鱼体育」收藏在顺手的位置</strong>，不是出于冲动，而是因为你知道某天又想打开它，而它始终保持着熟悉的节奏。</p>
+    </div>
+
+    <!-- 优势区：轻量、稳定、持续 -->
+    <div class="advantage-grid">
+        <div class="advantage-item">
+            <div class="icon-symbol">⚬</div>
+            <h3>稳定如常</h3>
+            <p>无论是清晨还是深夜，页面加载的速度与内容结构的清晰感，几乎从未让人失望。</p>
+        </div>
+        <div class="advantage-item">
+            <div class="icon-symbol">⚬</div>
+            <h3>克制的变化</h3>
+            <p>每一次再访，都能看到细微的优化。设计不频繁改动，却总在完善。</p>
+        </div>
+        <div class="advantage-item">
+            <div class="icon-symbol">⚬</div>
+            <h3>无痕衔接</h3>
+            <p>从任意设备再次打开，体验的连贯性让人安心——不需要重新适应。</p>
+        </div>
+    </div>
+
+    <!-- 说明区：从持续关注的角度展开 -->
+    <div class="essay-section">
+        <h2>持续关注的理由</h2>
+        <p>我们常常因为一个瞬间的兴致而打开某个站点，然后忘记。但也有一些站点，你会下意识地存起来，隔段时间再看一眼。<a href="https://appportal-leyu.com.cn" class="inline-link-natural">乐鱼体育</a> 就属于后者。</p>
+        <p>它不做铺天盖地的提醒，也不会用浮窗干扰阅读。内容本身保持适度的更新，文字和信息的组织方式偏向平实，没有多余的装饰。这种气质让人愿意把它留在书签栏里，偶尔回来，像是在翻一本杂志的同一栏目。</p>
+        <div class="inset-block">
+            <span style="display: block; margin-bottom: 4px;">✎ 一个小习惯</span>
+            如果你习惯每周清理一次书签，不妨试试把「乐鱼体育」放在一个单独的“再访”文件夹中。让它成为你网络漫游中一个安静的坐标。
+        </div>
+    </div>
+
+    <!-- FAQ 摘要 — 温和、不夸大 -->
+    <div class="faq-summary">
+        <h2>几个常见的小问题</h2>
+
+        <div class="faq-item">
+            <span class="question">页面有时加载稍慢，正常吗？</span>
+            <div class="answer">偶尔因网络波动会有延迟，多数时候响应很快。可以尝试刷新或稍后再回访。没有强制刷新的机制，节奏由你掌握。</div>
+        </div>
+
+        <div class="faq-item">
+            <span class="question">收藏之后，内容会有明显变化吗？</span>
+            <div class="answer">整体风格与信息框架保持稳定，但部分细节会持续优化。书签指向的仍然是同一个熟悉的结构。<a href="https://appportal-leyu.com.cn">乐鱼体育</a> 的更新更像是在原有底版上做润色，而非推翻重来。</div>
+        </div>
+
+        <div class="faq-item">
+            <span class="question">在不同设备上体验一致吗？</span>
+            <div class="answer">基本一致。无论是宽屏还是手机，排版和核心内容都做了适配。你可以在电脑上收藏，然后在手机浏览器里再次打开——书签栏会记得它。</div>
+        </div>
+
+        <div class="faq-item">
+            <span class="question">为什么适合长期放在书签里？</span>
+            <div class="answer">它不追求让你每天都来，也不制造焦虑。信息密度适中，结构清晰，适合那些希望保持网络空间简洁、有序的人。</div>
+        </div>
+    </div>
+
+    <!-- 底部链接区 -->
+    <div class="footer-links">
+        <a href="https://appportal-leyu.com.cn">乐鱼体育</a>
+        <span>·</span>
+        <a href="#">书签建议</a>
+        <a href="#">再访笔记</a>
+        <span>·</span>
+        <span>页面 · 持续更新</span>
+    </div>
+
+    <!-- 极简脚注，无实质诱导 -->
+    <div class="faint-note">
+        如果你愿意，可以把本页加入书签；这里的内容会随时间微调，但始终保留最初的气质。
+    </div>
+
+</body>
+</html>
