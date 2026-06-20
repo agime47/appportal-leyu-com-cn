@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>再次遇见 · 爱游戏</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(145deg, #fde8cd 0%, #f7d4b5 40%, #f5cba7 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.25rem;
+            line-height: 1.7;
+            color: #3d2e23;
+        }
+
+        .card {
+            max-width: 820px;
+            width: 100%;
+            background: #fffcf7;
+            border-radius: 42px;
+            padding: 3rem 3.2rem;
+            box-shadow: 0 20px 40px -12px rgba(120, 80, 50, 0.2), 0 8px 16px rgba(0,0,0,0.04);
+            transition: box-shadow 0.2s;
+        }
+
+        @media (max-width: 600px) {
+            .card {
+                padding: 2.2rem 1.6rem;
+                border-radius: 28px;
+            }
+        }
+
+        .hero-tag {
+            font-size: 0.9rem;
+            letter-spacing: 0.06em;
+            color: #b48b6e;
+            background: #f6ede4;
+            display: inline-block;
+            padding: 0.3rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            border: 1px solid #e8d6c7;
+        }
+
+        h1 {
+            font-size: 2.6rem;
+            font-weight: 600;
+            letter-spacing: -0.015em;
+            color: #2d2017;
+            margin-bottom: 0.8rem;
+            line-height: 1.2;
+        }
+
+        .subhead {
+            font-size: 1.18rem;
+            color: #5f4532;
+            background: #f7ede3;
+            padding: 0.8rem 1.6rem;
+            border-radius: 100px;
+            margin: 1.2rem 0 2rem 0;
+            display: inline-block;
+            border-left: 5px solid #dbaa81;
+            font-weight: 450;
+        }
+
+        .intro p {
+            margin-bottom: 1.4rem;
+            font-size: 1.08rem;
+        }
+
+        .intro a {
+            color: #b4562a;
+            text-decoration: none;
+            font-weight: 550;
+            padding: 0.04rem 0.1rem;
+            border-bottom: 2px solid #eacdba;
+            transition: border-color 0.15s, color 0.15s;
+        }
+
+        .intro a:hover {
+            border-bottom-color: #b4562a;
+            color: #8a3f1d;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin: 2.4rem 0 2.2rem 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .feature-list li {
+            background: #faf2ea;
+            padding: 1.2rem 1.6rem;
+            border-radius: 30px;
+            border-left: 6px solid #dbaa81;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.9rem;
+            font-size: 1.05rem;
+            box-shadow: 0 2px 6px rgba(130, 80, 40, 0.04);
+        }
+
+        .feature-list li::before {
+            content: "✦";
+            color: #b4562a;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+
+        .quote-block {
+            background: #f7ede3;
+            padding: 1.5rem 2rem;
+            border-radius: 30px;
+            margin: 2.2rem 0 2.4rem 0;
+            font-style: normal;
+            border: 1px solid #eedbcb;
+        }
+
+        .quote-block p {
+            margin-bottom: 0.3rem;
+        }
+
+        .faq-mini {
+            margin: 2.6rem 0 2rem 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+        }
+
+        @media (max-width: 540px) {
+            .faq-mini {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .faq-item {
+            background: #f8efe7;
+            padding: 1rem 1.4rem;
+            border-radius: 28px;
+            border: 1px solid #e6d4c3;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 600;
+            color: #3a281e;
+            margin-bottom: 0.2rem;
+            font-size: 1rem;
+        }
+
+        .faq-item span {
+            font-size: 0.96rem;
+            color: #5b4432;
+        }
+
+        .closing-note {
+            margin-top: 2.2rem;
+            padding-top: 1.8rem;
+            border-top: 2px dashed #e2cdba;
+            font-size: 1.05rem;
+            color: #3f2e21;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 0.4rem 0.2rem;
+        }
+
+        .closing-note a {
+            color: #b4562a;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 2px solid #eacdba;
+            padding: 0 0.1rem;
+            transition: border-color 0.15s;
+        }
+
+        .closing-note a:hover {
+            border-bottom-color: #b4562a;
+        }
+
+        .meta-marker {
+            font-size: 0.8rem;
+            color: #b59a85;
+            margin-top: 2rem;
+            text-align: right;
+            letter-spacing: 0.03em;
+            opacity: 0.6;
+        }
+
+        .btn-soft {
+            display: inline-block;
+            background: #efe2d5;
+            border-radius: 80px;
+            padding: 0.4rem 1.4rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #4f3827;
+            border: 1px solid #dcc6b2;
+            text-decoration: none;
+            transition: background 0.15s, box-shadow 0.15s;
+            margin: 0.4rem 0.2rem 0 0;
+        }
+
+        .btn-soft:hover {
+            background: #e5d3c2;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="hero-tag">✦ 常来常新 · 游戏手记</div>
+
+        <h1>再次推开那扇门</h1>
+
+        <div class="intro">
+            <p>有些地方，第一次是偶然，第二次就成了习惯。也许你曾在某个深夜点开过一个页面，也许只是匆匆扫过几眼便关掉了标签页——但那些让你停留片刻的角落，总是值得再回来看看。</p>
+
+            <p>我们整理了关于 <a href="https://zh-web-i-game.com.cn">爱游戏</a> 的一些介绍和特点，不是为了说服谁，而是希望下一次你想找一个安静、踏实、能好好看看游戏内容的地方时，能想起这里。收藏它也好，偶尔回来翻翻也好，都随你。</p>
+        </div>
+
+        <div class="subhead">▸ 一些你可能会慢慢注意到的地方</div>
+
+        <ul class="feature-list">
+            <li><strong>内容整理得比较用心</strong> —— 没有铺天盖地的弹窗和广告，文章和介绍都尽量写得清楚、有条理，读起来不费劲。</li>
+            <li><strong>不追赶热点，更看重沉淀</strong> —— 很多游戏资讯站今天发完明天就忘，但这里更愿意保留一些经得起时间看的内容，适合慢慢翻。</li>
+            <li><strong>界面干净，阅读友好</strong> —— 配色柔和，排版疏朗，没有那种逼着你点来点去的交互。用手机或电脑看都还舒服。</li>
+            <li><strong>适合静下来浏览</strong> —— 如果你也喜欢一边喝茶一边看游戏设定、关卡设计或者开发幕后，这里大概会合你胃口。</li>
+        </ul>
+
+        <div class="quote-block">
+            <p>📌 “收藏夹里的网站越来越多，但真正会再点开的没有几个。<strong>爱游戏</strong> 是那个我愿意保留并偶尔回来的地方。”</p>
+            <p style="margin-top:0.6rem; font-size:0.95rem; color:#5f4836;">—— 来自一位普通访客的留言</p>
+        </div>
+
+        <div class="faq-mini">
+            <div class="faq-item">
+                <strong>❓ 需要注册才能看吗？</strong>
+                <span>不用。大部分内容直接浏览即可，没有强制登录的环节。</span>
+            </div>
+            <div class="faq-item">
+                <strong>❓ 内容会频繁更新吗？</strong>
+                <span>保持一定的更新节奏，但更注重质量。偶尔来看看总会有新发现。</span>
+            </div>
+            <div class="faq-item">
+                <strong>❓ 有移动版或者 App 吗？</strong>
+                <span>目前以网页为主，手机浏览器打开体验也不错，可以添加到主屏幕。</span>
+            </div>
+            <div class="faq-item">
+                <strong>❓ 怎么收藏最方便？</strong>
+                <span>浏览器加书签，或者直接记住网址就好。也欢迎向朋友推荐。</span>
+            </div>
+        </div>
+
+        <div class="closing-note">
+            <span>倘若你读到了这里，说明你也愿意认真对待那些值得被记住的站点。</span>
+            <span>那就把 <a href="https://zh-web-i-game.com.cn">爱游戏</a> 放进收藏夹吧——</span>
+            <span>不用刻意，等哪天空下来，再回来翻翻。</span>
+            <a href="https://zh-web-i-game.com.cn" class="btn-soft" style="margin-left: auto;">爱游戏</a>
+        </div>
+
+        <div class="meta-marker">· 持续关注 · 温和收藏 ·</div>
+    </div>
+</body>
+</html>
