@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简明指南 · 5e对战平台</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #fbfbfb;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #1e2a3a;
+            line-height: 1.7;
+            padding: 2rem 1.2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page {
+            max-width: 720px;
+            width: 100%;
+        }
+
+        /* 顶部导航 */
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.6rem 0 1.8rem 0;
+            border-bottom: 1px solid #e6edf0;
+            margin-bottom: 2.8rem;
+        }
+
+        .top-nav .brand {
+            font-weight: 600;
+            font-size: 1.2rem;
+            letter-spacing: 0.01em;
+            color: #1e2a3a;
+            text-decoration: none;
+        }
+
+        .top-nav .brand span {
+            color: #3b6ea4;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.6rem;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a {
+            color: #2c3e50;
+            text-decoration: none;
+            transition: color 0.15s;
+        }
+
+        .nav-links a:hover {
+            color: #1f6390;
+        }
+
+        /* hero 区域 — 简短引语 */
+        .hero {
+            margin-bottom: 3.2rem;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            line-height: 1.3;
+            margin-bottom: 1.2rem;
+            color: #16222e;
+        }
+
+        .hero .sub {
+            font-size: 1rem;
+            color: #4a5d6e;
+            max-width: 600px;
+            background: #f3f7fa;
+            padding: 1rem 1.4rem;
+            border-radius: 20px;
+            border-left: 4px solid #3b6ea4;
+        }
+
+        /* 核心介绍卡片 */
+        .intro-card {
+            background: #ffffff;
+            padding: 1.8rem 2rem;
+            border-radius: 28px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.04);
+            margin-bottom: 3rem;
+        }
+
+        .intro-card h2 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em;
+        }
+
+        .intro-card p {
+            margin-bottom: 1rem;
+            font-size: 0.98rem;
+        }
+
+        .intro-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .intro-card a {
+            color: #1f6390;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 0.5px;
+        }
+
+        .intro-card a:hover {
+            color: #0a3855;
+        }
+
+        /* 三个场景模块 */
+        .scene-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.6rem;
+            margin-bottom: 3rem;
+        }
+
+        .scene-item {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 1.6rem 1.8rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+            border: 1px solid #edf2f5;
+            transition: box-shadow 0.2s;
+        }
+
+        .scene-item:hover {
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+        }
+
+        .scene-item h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 0.7rem;
+            color: #1a2c3d;
+        }
+
+        .scene-item p {
+            font-size: 0.95rem;
+            color: #354b5e;
+        }
+
+        .scene-item .tag {
+            display: inline-block;
+            background: #e4edf4;
+            color: #1f5370;
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 0.1rem 0.8rem;
+            border-radius: 30px;
+            margin-top: 0.7rem;
+            letter-spacing: 0.02em;
+        }
+
+        /* 常见说明区域 (FAQ 摘要) */
+        .faq-section {
+            margin: 2.6rem 0 3rem 0;
+        }
+
+        .faq-section h2 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 1.4rem;
+        }
+
+        .faq-item {
+            padding: 0.9rem 0;
+            border-bottom: 1px solid #e3eaeef0;
+        }
+
+        .faq-item:last-of-type {
+            border-bottom: none;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 500;
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+            color: #1b3347;
+        }
+
+        .faq-item p {
+            font-size: 0.94rem;
+            color: #3e5669;
+        }
+
+        /* 页脚提醒 */
+        .footer-note {
+            border-top: 1px solid #dfe8ed;
+            padding-top: 1.8rem;
+            margin-top: 1.2rem;
+            font-size: 0.9rem;
+            color: #5a6f81;
+            text-align: left;
+        }
+
+        .footer-note a {
+            color: #2c5f83;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .footer-note a:hover {
+            color: #0d3b59;
+        }
+
+        /* 响应式微调 */
+        @media (max-width: 500px) {
+            .top-nav {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.6rem;
+            }
+            .nav-links {
+                gap: 1.2rem;
+                flex-wrap: wrap;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .intro-card {
+                padding: 1.4rem;
+            }
+            .scene-item {
+                padding: 1.2rem 1.4rem;
+            }
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- 顶部导航 -->
+    <nav class="top-nav">
+        <a href="#" class="brand"><span>5e</span> 简明指南</a>
+        <div class="nav-links">
+            <a href="#intro">介绍</a>
+            <a href="#scenes">场景</a>
+            <a href="#faq">说明</a>
+        </div>
+    </nav>
+
+    <!-- hero 引语 -->
+    <div class="hero">
+        <h1>找到适合你的<br>对战节奏</h1>
+        <div class="sub">
+            <a href="https://home-5e.com">5e对战平台</a> 提供稳定的匹配环境与清晰的竞技梯度。下面是一份整理后的访问提醒与使用场景说明。
+        </div>
+    </div>
+
+    <!-- 核心介绍 -->
+    <div class="intro-card" id="intro">
+        <h2>平台侧重点</h2>
+        <p>日常对战最关心两件事：匹配速度与对局质量。<a href="https://home-5e.com">5e对战平台</a> 在反作弊、分房机制和服务器延迟方面做了持续调整，整体更偏向硬核对战体验。如果你之前使用其他平台，这里的计分规则和段位划分稍有不同，建议先了解基础设定。</p>
+        <p>平台采用独立天梯分与赛季结算，定级赛阶段波动较大，完成 10～15 场对局后分数会逐渐收敛到真实区间。另外，优先匹配模式下，信誉分与活跃度会影响排队时长，保持良好行为能有效缩短等待。</p>
+    </div>
+
+    <!-- 三个具体场景 -->
+    <div class="scene-grid" id="scenes">
+        <div class="scene-item">
+            <h3>单人排位 · 稳定上分</h3>
+            <p>系统根据近期 k/d、助攻、辅助数据动态调整队友与对手范围。建议选择常用位置并保持至少 2～3 个英雄池，单排时沟通简洁清晰，胜率会更稳定。</p>
+            <span class="tag">偏好设置</span>
+        </div>
+        <div class="scene-item">
+            <h3>组队开黑 · 战术执行</h3>
+            <p>五人预组队会进入更严格的队伍分匹配，语音沟通效率直接影响战术执行。平台内置了简易的集火标记与战术板，适合快速下达指令。队内分差超过 600 分会触发补分补偿机制。</p>
+            <span class="tag">队伍分补偿</span>
+        </div>
+        <div class="scene-item">
+            <h3>休闲匹配 · 练习与适应</h3>
+            <p>非天梯模式没有分数压力，但同样启用反作弊检测。适合测试新英雄、调整灵敏度或与不同分段的朋友一起游戏。休闲模式下经验与通行证进度正常累积。</p>
+            <span class="tag">无分模式</span>
+        </div>
+    </div>
+
+    <!-- 常见说明 (FAQ 摘要风格) -->
+    <div class="faq-section" id="faq">
+        <h2>常见说明</h2>
+        <div class="faq-item">
+            <strong>匹配等待时间较长？</strong>
+            <p>高峰时段（19:00–23:00）匹配最快。如果超过 3 分钟未排入，建议取消重排或检查是否开启了“仅优先匹配”。低信誉分可能会延长排队时间。</p>
+        </div>
+        <div class="faq-item">
+            <strong>赛季重置规则</strong>
+            <p>每个赛季结束后，天梯分会按比例软重置（通常压缩至 60%~70%），并需要重新进行 5 局定级校准。巅峰赛分数不受影响。</p>
+        </div>
+        <div class="faq-item">
+            <strong>反作弊与数据同步</strong>
+            <p>平台采用后台扫描 + 对局行为分析，检测到异常会实时冻结对局并回滚分数。每场 demo 可下载查看，数据面板包含热力、投掷物轨迹等详细复盘工具。</p>
+        </div>
+        <div class="faq-item">
+            <strong>账号与登录问题</strong>
+            <p>支持手机号或邮箱注册，同一账号可在 PC 端和移动端使用。异地登录会触发二次验证，建议提早绑定安全手机。</p>
+        </div>
+    </div>
+
+    <!-- 页脚 / 提醒 -->
+    <footer class="footer-note">
+        <p>以上内容基于平台公开信息与常见用户反馈整理，具体规则以 <a href="https://home-5e.com">5e对战平台</a> 实际界面为准。首次使用建议先完成新手引导和灵敏度校准，有助于更快适应对局节奏。</p>
+        <p style="margin-top: 0.6rem; color: #7a8c9b;">简明指南 · 仅供了解，不构成任何承诺</p>
+    </footer>
+
+</div>
+</body>
+</html>
